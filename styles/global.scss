@@ -1,3 +1,6 @@
+$white: #fff;
+$blue: rgb(64, 50, 220);
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -6,8 +9,6 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -87,12 +88,6 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 a {
@@ -105,3 +100,18 @@ a {
     color-scheme: dark;
   }
 }
+
+img{
+  max-width: 100%;
+}
+.fluid-container{
+  background-color: $white;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.container{
+  background-color: $white;
+  max-width: 1176;
+  margin: 0 auto;
+}
+

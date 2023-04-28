@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    .topRight{
+        display: flex;
+        align-items: center;
+        
+        .topRightIcons{
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            margin-left: 2rem;
+            opacity: 0.6;
+            &:hover{
+                opacity: 1;
+            }
+            svg{
+                width: 1.3rem;
+                height: 1.3rem;
+            }
+        }
+    }
+}
