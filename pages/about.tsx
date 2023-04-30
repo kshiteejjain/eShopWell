@@ -1,5 +1,4 @@
 import PageHeaders from '@/component/Head';
-import { Counter } from '../features/counter/counter'
 interface dataTypes {
     map: any;
     data: object;
@@ -13,7 +12,6 @@ const About = (props: dataTypes) => {
         <>
         <PageHeaders title='About Us' />
             <h1>About Us</h1>
-            <Counter />
         </>
     )
 };
