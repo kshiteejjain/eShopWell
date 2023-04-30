@@ -32,10 +32,6 @@ const Home = (props: any) => {
 
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(arrayData())
-  },[dispatch])
-
   return (
     <>
       <PageHeaders title='Home' />
