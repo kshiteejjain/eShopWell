@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './features/counter/counterSlice';
+import cartReducer from './features/cart/cartSlice';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, } from 'redux-persist';
 import { combineReducers } from '@reduxjs/toolkit';
@@ -11,7 +11,7 @@ const persistConfig = {
 };
 
 const reducer = combineReducers({
-    counter: counterReducer
+    counter: cartReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

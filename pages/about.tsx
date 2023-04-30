@@ -1,7 +1,14 @@
 import PageHeaders from '@/component/Head';
 import { Counter } from '../features/counter/counter'
+interface dataTypes {
+    map: any;
+    data: object;
+    props: string;
+    context: any
+}
 
-const About = () => {
+const About = (props: dataTypes) => {
+    
     return (
         <>
         <PageHeaders title='About Us' />
