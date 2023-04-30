@@ -21,18 +21,18 @@ const searchQuery = (e : any) => {
         <div className={style.navbar}>
             <Image priority src={logo} alt="Logo" width={291} height={57} />
 
-            <form onSubmit={searchQuery} className={style.searchForm}>
+            {/* <form onSubmit={searchQuery} className={style.searchForm}>
                 <input type='text' placeholder='Search here' />
                 <input type='submit' value='Search' />
-            </form>
+            </form> */}
 
             <div className={style.topRight}>
-                {theme === 'light' ? 
+                {/* {theme === 'light' ? 
                 <button className={style.topRightIcons}> <FontAwesomeIcon icon={faMoon} /></button> 
                 : 
                 <button className={style.topRightIcons}><FontAwesomeIcon icon={faSun} /></button> }
                 
-                <button className={style.topRightIcons}><FontAwesomeIcon icon={faHeart} /></button>
+                <button className={style.topRightIcons}><FontAwesomeIcon icon={faHeart} /></button> */}
                 <button className={`${style.topRightIcons} ${style.cart}`}>  <span className={style.cartCount}>{count}</span><Image loading='lazy' src={cart} alt="Cart" width={25} height={25} /> </button>
             </div>
         </div>

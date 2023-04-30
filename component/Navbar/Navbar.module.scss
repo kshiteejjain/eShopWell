@@ -48,3 +48,11 @@
         font-size: 12px;
     }
 }
+
+@media (max-width: 767px) {
+    .navbar{
+        img{
+            max-width: 70%;
+        }
+    }
+}

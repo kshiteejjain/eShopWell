@@ -204,3 +204,23 @@ input[type="submit"] {
     background-color: $blueHover;
   }
 }
+
+@media (max-width: 767px) {
+  .productFlex{
+    justify-content: space-between;
+  }
+  .card{
+    flex-basis: 48%;
+    margin: 0 1% 1rem 1%;
+    .productTitle{
+      flex-direction: column;
+    }
+    .description{
+      display: none;
+    }
+    h1{
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+}

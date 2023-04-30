@@ -7,7 +7,7 @@ import BannerSlider from '@/component/BannerSlider/BannerSlider';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import type { RootState } from '../store';
-import { decrement, increment, arrayData } from '../features/cart/cartSlice';
+import { increment } from '../features/cart/cartSlice';
 
 
 const Home = (props: any) => {
@@ -55,10 +55,6 @@ const Home = (props: any) => {
               <p className='description'>{item.description}</p>
               <div className='productTitle'>
                 <a href='javascript:void(0)' className='primaryButton' onClick={() => dispatch(increment())}>Add to Cart</a>
-
-                <button onClick={() => dispatch(increment())}> Increment</button>
-                <span>{count}</span>
-                <button onClick={() => dispatch(decrement())}>Decrement</button>
                 <p>{star}</p>
               </div>
               {/* {item.images.map((item: any, i: any) => (

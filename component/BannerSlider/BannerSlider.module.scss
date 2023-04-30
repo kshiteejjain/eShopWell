@@ -7,3 +7,8 @@
     height: 350px;
     position: relative;
 }
+@media (max-width: 767px) {
+    .banners{
+        height: 170px;
+    }
+}
