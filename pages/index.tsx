@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PageHeader from '@/component/Navbar/Navbar';
 import { useRouter } from "next/router";
@@ -7,23 +7,20 @@ import BannerSlider from '@/component/BannerSlider/BannerSlider';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import type { RootState } from '../store';
-import { decrement, increment } from '../features/cart/cartSlice';
+import { decrement, increment, arrayData } from '../features/cart/cartSlice';
 
 
 const Home = (props: any) => {
   
 
-  console.log(props);
-
   const router = useRouter();
 
   const aboutUs = () => router.push('about')
 
-  {
-    props?.data?.products?.map((item: any) => (
-      localStorage.setItem('rating', item.rating)
-    ))
-  }
+  
+  props?.data?.products?.map((item: any) => (
+    localStorage.setItem('rating', item.rating)
+  ))
 
   const starIcon = <FontAwesomeIcon icon={faStar} color="#1c74bd" />;
   const ratingNum = Number(localStorage.getItem('rating'))
@@ -31,9 +28,13 @@ const Home = (props: any) => {
   for (var i = 1; i <= ratingNum; i++) {
     star.push(starIcon)
   }
-  const count = useSelector((state: RootState) => state.counter.value)
+  const count = useSelector((state: RootState) => state.cart.value)
 
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(arrayData())
+  },[dispatch])
 
   return (
     <>
@@ -57,7 +58,7 @@ const Home = (props: any) => {
               </div>
               <p className='description'>{item.description}</p>
               <div className='productTitle'>
-                <a href='javascript:void(0)' className='primaryButton'>Add to Cart</a>
+                <a href='javascript:void(0)' className='primaryButton' onClick={() => dispatch(increment())}>Add to Cart</a>
 
                 <button onClick={() => dispatch(increment())}> Increment</button>
                 <span>{count}</span>
@@ -80,6 +81,7 @@ export async function getServerSideProps(context: any) {
   const data = await res.json();
   return {
     props: { data },
+    
   }
 }
 

@@ -1,3 +1,5 @@
+@import '../../styles/color.scss';
+
 .navbar{
     display: flex;
     align-items: center;
@@ -25,5 +27,24 @@
     .searchForm{
         width: 44%;
         display: flex;
+    }
+    .cart{
+        position: relative;
+        opacity: 1 !important;
+    }
+    .cartCount{
+        position: absolute;
+        width: 23px;
+        height: 22px;
+        display: flex;
+        background-color: $blue;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        top: -14px;
+        right: -8px;
+        color: $white;
+        font-weight: bold;
+        font-size: 12px;
     }
 }

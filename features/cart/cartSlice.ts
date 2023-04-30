@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface CounterState {
-  value: number
+  value: number;
+  products: object
 }
 
 const initialState: CounterState = {
   value: 0,
+  products : []
 }
 
 export const cartSlice = createSlice({
@@ -22,9 +24,13 @@ export const cartSlice = createSlice({
             state.value -= 1
         }
     },
+    arrayData: (state, action) => {
+      state.products = action.payload;
+      console.log(action);
+    },
   },
 })
 
-export const { increment, decrement } = cartSlice.actions
+export const { increment, decrement, arrayData } = cartSlice.actions
 
 export default cartSlice.reducer

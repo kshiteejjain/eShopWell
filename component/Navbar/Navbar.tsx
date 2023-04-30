@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
 import Image from 'next/image';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faSun, faMoon, faClone } from "@fortawesome/free-regular-svg-icons";
@@ -9,6 +11,7 @@ import style from './Navbar.module.scss';
 
 const Navbar = () => {
     const [theme, setTheme] = useState('light');
+    const count = useSelector((state: RootState) => state.cart.value)
 
 const searchQuery = (e : any) => {
     e.preventDefault();
@@ -30,7 +33,7 @@ const searchQuery = (e : any) => {
                 <button className={style.topRightIcons}><FontAwesomeIcon icon={faSun} /></button> }
                 
                 <button className={style.topRightIcons}><FontAwesomeIcon icon={faHeart} /></button>
-                <button className={style.topRightIcons}> <Image loading='lazy' src={cart} alt="Cart" width={25} height={25} /> </button>
+                <button className={`${style.topRightIcons} ${style.cart}`}>  <span className={style.cartCount}>{count}</span><Image loading='lazy' src={cart} alt="Cart" width={25} height={25} /> </button>
             </div>
         </div>
     )
